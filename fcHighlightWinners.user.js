@@ -1,7 +1,7 @@
 // ==UserScript==
 // @author         friendly-trenchcoat
 // @name           Reddit - Food Club Highlight Winners
-// @description    Enter the winners in the textbox. Each bet table will have winning bets highlighted, and total winnings added up.
+// @description    Enter the winners in the text. Each bet table will have winning bets highlighted, and total winnigns added up.
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
 // @require	       http://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
@@ -12,7 +12,7 @@ function highlight(winners){
     $("tbody").each(function(k,v) { // for each table
         winAmt = 0;
         $(v).children().each(function(k,v) { // for each row
-            if ($(v).children().length == 8){      // (if it's actually a bet table)
+            if ($(v).children().length >= 7){      // (if it's actually a bet table)
                 for (var i=1; i<6; i++){           // for each column
                     cell = $(v).children().eq(i);
                     if (!(winners.includes(cell.text())) && cell.text() !== '') { // if the cell contains a pirate that's not a winner
@@ -25,7 +25,7 @@ function highlight(winners){
             }
         });
         console.log(winAmt);
-        $(v).parent().parent().prepend('<h1>'+winAmt+':'+$(v).children().length+'</h1>');
+        $(v).parent().parent().prepend('<h1 class="winAmt">'+winAmt+':'+$(v).children().length+'</h1>');
     });
 }
 function unhighlight(){
@@ -34,14 +34,17 @@ function unhighlight(){
             $(v).removeAttr("style");
         }
     });
+    $(".winAmt").remove();
 }
 var submitButton = $('<button/>', {
     text: "go",
     id: "submitButton",
     click: function () {
-        highlight( $('#winnersBox').val() );
-        if (!$('#winnersBox').val()) $('#winnersButton').text( "highlight winners" );
-        else $('#winnersButton').text( $('#winnersBox').val() );
+        if (!$('#winnersBox').val()) $('#winnersButton').text( "highlight winners" ); // ignore blank input
+        else {
+            highlight( $('#winnersBox').val() );
+            $('#winnersButton').text( $('#winnersBox').val() );
+        }
         $('#winnersBox').hide();
         $(this).hide();
         $('#winnersButton').show();
@@ -55,6 +58,7 @@ var winnersButton = $('<button/>', {
         $('#submitButton').show();
         $("[class='sitetable nestedlisting']").prepend('<textarea type="text" id="winnersBox" value="">');
         $('#winnersBox').css({"position":"fixed", "top":"70px", "left":"0px", "z-index":"100"});
+        $('#winnersBox').focus();
         unhighlight();
     }
 });
