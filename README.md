@@ -4,8 +4,8 @@ Enter the winners in the textbox. Each bet table will have winning bets highligh
 ![Screenshot](http://i.imgur.com/7CDSJXz.png "Screenshot")
 Note: /u/TheJayeless is not associated with me or this script
 <br>
-#
-###FoodClub Series:
-- [Previous Round](https://github.com/friendly-trenchcoat/foodclub-Previous-Round)
-- [Highlight Winners](https://github.com/friendly-trenchcoat/Reddit-FoodClub-Highlight-Winners)
-- [Bet Buttons](https://github.com/friendly-trenchcoat/Reddit-FoodClub-BetButtons)
+
+**FoodClub Series:**
+* [Previous Round](https://github.com/friendly-trenchcoat/foodclub-Previous-Round)
+* [Highlight Winners](https://github.com/friendly-trenchcoat/Reddit-FoodClub-Highlight-Winners)
+* [Bet Buttons](https://github.com/friendly-trenchcoat/Reddit-FoodClub-BetButtons)
