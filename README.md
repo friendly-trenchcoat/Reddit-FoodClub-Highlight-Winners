@@ -2,7 +2,7 @@
 Enter the winners in the textbox. Each bet table will have winning bets highlighted, and total winnings added up and displayed at top of comment.
 
 ![Screenshot](http://i.imgur.com/7CDSJXz.png "Screenshot")
-Note: /u/TheJayeless, /u/diceroll123, and Neopets.com are not associated with me or this script
+Note: /u/TheJayeless and /u/diceroll123 are not associated with me or this script
 <br>
 
 **FoodClub Series:**
