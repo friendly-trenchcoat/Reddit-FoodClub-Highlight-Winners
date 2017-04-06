@@ -1,7 +1,9 @@
 // ==UserScript==
-// @author         friendly-trenchcoat
 // @name           Reddit - Food Club Highlight Winners
+// @namespace      https://github.com/friendly-trenchcoat
+// @version        1.5
 // @description    Enter the winners in the textbox. Each bet table will have winning bets highlighted, and total winnings added up.
+// @author         friendly-trenchcoat
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
 // @require	       http://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
